@@ -1,9 +1,9 @@
 const title = 'Урок 2';
-let screens = "Простые, Сложные, Интерактивные";
-let screenPrice = 9;
-let rollback = 50;
-let fullPrice = 100;
-let adaptive = false;
+const screens = "Простые, Сложные, Интерактивные";
+const screenPrice = 9;
+const rollback = 50;
+const fullPrice = 100;
+const adaptive = false;
 
 console.log('Типы данных: \n title - ' + typeof(title) + ',\n fullPrice - ' + typeof(fullPrice) + ',\n adaptive - ' + typeof(adaptive) + '.' );
 console.log('Длина строки: ' + screens.length + '.');
