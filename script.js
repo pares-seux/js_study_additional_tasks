@@ -1,22 +1,62 @@
-let num = 266219;
-let multy = 1;
+"use strict";
 
-// version1
-while (num) {
-    let temp = num % 10;
-    multy *= temp;
-    num = (num - temp) / 10;
+let lang = "ru";
+let week = new Map([
+  [
+    "ru",
+    [
+      "Понедельник",
+      "Вторник",
+      "Среда",
+      "Четверг",
+      "Пятница",
+      "Суббота",
+      "Воскресенье",
+    ],
+  ],
+  [
+    "en",
+    [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+    ],
+  ],
+]);
+console.log("#1");
+if (lang === "ru") {
+  console.log(week.get(lang).toString());
+} else if (lang === "en") {
+  console.log(week.get(lang) + "");
+} else {
+  console.log("Мы такого языка не знаем");
 }
-console.log(multy);
+console.log("#1");
+switch (lang) {
+  case "ru":
+    console.log(week.get(lang) + "");
+    break;
+  case "en":
+    console.log(week.get(lang).toString());
+    break;
+  default:
+    console.log("Мы такого языка не знаем");
+}
+console.log("#3");
+console.log(week.get(lang) + "");
 
-//version2
-num = 266219;
-multy = 1;
-num.toString().split('').forEach( element => { 
-   multy *= element;  
-});
+console.log("_______________________________________");
 
-console.log((multy ** 3).toString().slice(0,2));
+let namePerson = "Кирилл";
 
-
-
+namePerson === "Артем"
+  ? console.log("Директор")
+  : namePerson === "Александр"
+  ? console.log("преподаватель")
+  : namePerson === "Кирилл"
+  ? console.log("лучший куратор")
+  : console.log("студент");
