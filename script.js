@@ -58,5 +58,5 @@ namePerson === "Артем"
   : namePerson === "Александр"
   ? console.log("преподаватель " + namePerson)
   : namePerson === "Кирилл"
-  ? console.log("лучший куратор " + namePerson) 
-  : console.log("студент");
+  ? console.log("лучший куратор " + namePerson)
+  : console.log("студент " + namePerson);
