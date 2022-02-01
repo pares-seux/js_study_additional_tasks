@@ -29,19 +29,19 @@ let week = new Map([
 ]);
 console.log("#1");
 if (lang === "ru") {
-  console.log(week.get(lang).toString());
+  console.log(week.get("ru").toString());
 } else if (lang === "en") {
-  console.log(week.get(lang) + "");
+  console.log(week.get("en") + "");
 } else {
   console.log("Мы такого языка не знаем");
 }
 console.log("#1");
 switch (lang) {
   case "ru":
-    console.log(week.get(lang) + "");
+    console.log(week.get("ru") + "");
     break;
   case "en":
-    console.log(week.get(lang).toString());
+    console.log(week.get("en").toString());
     break;
   default:
     console.log("Мы такого языка не знаем");
