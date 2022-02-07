@@ -1,29 +1,25 @@
 "use strict";
 
-const arr = ["123", "456", "789", "24680", "13579", "4444", "2222"];
-for (let i = 0; i < arr.length; i++) {
-  if (arr[i].charAt(0) === "2" || arr[i].charAt(0) === "4") {
-    console.log(arr[i]);
-  }
-}
+const week = [
+      "Воскресенье",
+      "Понедельник",
+      "Вторник",
+      "Среда",
+      "Четверг",
+      "Пятница",
+      "Суббота",
+    ];
 
-function searchNumber(num) {
-  for (let i = 2; i < Math.round(num / 2); i++) {
-    if (num % i === 0) {
-      return false;
-    }
-  }
-  return true;
-}
+let date = new Date();
 
-function searchLoop(num) {
-  console.log(1 + " Делители этого числа: 1 и 1");
-  console.log(2 + " Делители этого числа: 1 и 2");
-  for (let i = 3; i <= num; i += 2) {
-    if (searchNumber(i)) {
-      console.log(i + " Делители этого числа: 1 и " + i);
-    }
-  }
-}
 
-searchLoop(100);
+for (let day in week) {
+  let styleRule = '';
+  if ( +day === 0 || +day === 6 ) {
+    styleRule += 'font-style: italic; ';
+  }
+  if ( +day === date.getDay()) {
+    styleRule += 'font-weight: 800; '
+  }
+  console.log('%c%s', styleRule, week[day]);
+}
