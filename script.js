@@ -1,25 +1,21 @@
 "use strict";
 
-const week = [
-      "Воскресенье",
-      "Понедельник",
-      "Вторник",
-      "Среда",
-      "Четверг",
-      "Пятница",
-      "Суббота",
-    ];
+const longString = document.querySelector('.date--long');
+const shortString = document.querySelector('.date--short');
 
-let date = new Date();
+let date;
 
-
-for (let day in week) {
-  let styleRule = '';
-  if ( +day === 0 || +day === 6 ) {
-    styleRule += 'font-style: italic; ';
+function formatDate(num) {
+  if (+num < 10) {
+    return '0' + num;
   }
-  if ( +day === date.getDay()) {
-    styleRule += 'font-weight: 800; '
-  }
-  console.log('%c%s', styleRule, week[day]);
+  return num
 }
+
+
+
+setInterval(function() {
+  date = new Date();
+  console.log(date);
+  shortString.textContent = formatDate(date.getDate()) + '.' + formatDate(date.getMonth()) + '.' + date.getFullYear() + ' - ' + formatDate(date.getHours()) + ':' + formatDate(date.getMinutes()) + ':' +formatDate(date.getSeconds()); 
+}, 1000);
